@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require File.expand_path('../../config/application', __FILE__)
+require 'rake'
+
+ComplianceHound2::Application.load_tasks
+
+ENV['TEST']="test/integration/#{ARGV[0]}_test.rb"
+
+if test_name = ARGV[1]
+  ENV['TESTOPTS']="--name='/#{test_name.gsub(' ', '_')}/'"
+end
+
+Rake::Task['test'].invoke
+
