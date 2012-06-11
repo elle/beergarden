@@ -3,8 +3,10 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.2'
 
 gem 'sqlite3'
-gem 'rake', '0.9.3.beta.1'
+
+gem 'devise'
 gem 'haml'
+gem 'rake', '0.9.3.beta.1'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
