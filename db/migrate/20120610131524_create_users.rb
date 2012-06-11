@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_name
       t.string :email
       t.boolean :admin, :default => false
+      t.integer :consumed_count, :default => 0
 
       t.timestamps
     end
