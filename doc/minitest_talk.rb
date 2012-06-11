@@ -1,15 +1,52 @@
 # INTRO TO MINITEST
-# 1. Why Minitest?
-# 2. Minitest vs. Rspec
-# 3. Go over Gemfile
-# 4. Go over test_helper
-# 5. Go over our User model
+# ==========================================
+# 01. Why Minitest?
+# 02. Minitest vs. Rspec
+# 03. Go over Gemfile
+# 04. Go over test_helper
+# 05. Go over our User model
+# 06. Unit tests
+# 07. Ways to run tests
+# 08. Skipping tests
+# 09. Seed value: `rake test:units TESTOPTS='--seed=28615'` to be in the same order
+# 10. Run a single test
+# 11. Integration tests
 
-# note: check about syntax for running a single test
 
-# 6. Unit tests
-####################################################
 
+# Notes: 
+# ==========================================
+# test unit style using a class. for example:
+# test method starting with test_ to make it a test method
+# class UserTest < MiniTest::Unit::TestCase # need to inherit
+#   def test_to_param
+#   end
+# end
+
+# rspec style: can use describe and it blocks
+
+# 07. Ways to run tests:
+# % ruby -Itest test/unit/user_test.rb # include the test dir so it finds thetest_helper.rb
+# % rake test TEST=test/unit/user_test.rb
+
+# 10. Run a single test:
+# % ruby -Itest test/unit/user_test.rb --name=/invalid_user/
+
+# To print all possible options for Minitest, type
+# % ruby -r minitest/autorun -e '' -- --help
+# Output:
+# minitest options:
+#     -h, --help                       Display this help.
+#     -s, --seed SEED                  Sets random seed
+#     -v, --verbose                    Verbose. Show progress processing files.
+#     -n, --name PATTERN               Filter test names on pattern (e.g. /foo/)
+
+
+
+
+
+# 06. Unit tests
+# ==========================================
 require 'test_helper'
 
 describe User do
@@ -80,8 +117,9 @@ describe User do
 end
 
 
-# 7. Integration tests
-####################################################
+# 11. Integration tests
+# page.text.must_include '...'
+# ==========================================
 require 'test_helper'
 
 describe 'users integration' do

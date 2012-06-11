@@ -1,5 +1,5 @@
-ENV["RAILS_ENV"] = "test"
-require File.expand_path('../../config/environment', __FILE__)
+ENV["RAILS_ENV"] = "test" # load test env
+require File.expand_path('../../config/environment', __FILE__) # load application
 require 'rails/test_help'
 
 class ActiveSupport::TestCase
@@ -13,12 +13,10 @@ class ActiveSupport::TestCase
 end
 
 
-# require "minitest/autorun"
-# require 'minitest/spec'
-# require 'minitest/matchers'
+# require "minitest/autorun" # require minitest
 # require 'capybara/rails'
+# require 'minitest/matchers'
 # require 'valid_attribute'
-# require 'rr' # Mocking/Stubbing
 # require 'debugger'
 # 
 # # Turn like output reporter. More options, check: http://rubydoc.info/gems/minitest-reporters/0.4.0/file/README.md
@@ -33,7 +31,6 @@ end
 # DatabaseCleaner.strategy = :truncation
 # 
 # class MiniTest::Spec
-#   include RR::Adapters::MiniTest
 # 
 #   # If repeating "FactoryGirl" is too verbose for you, so we can use build()
 #   include FactoryGirl::Syntax::Methods
@@ -59,9 +56,9 @@ end
 # 
 # # If description name ends with 'integration', use this IntegrationTest class.
 # class IntegrationTest < MiniTest::Spec
-#   include Rails.application.routes.url_helpers
-#   include Capybara::DSL
-#   register_spec_type(/integration$/, self)
+#   include Rails.application.routes.url_helpers # to get url_helpers working
+#   include Capybara::DSL # to get caoybara working
+#   register_spec_type(/integration$/, self) # instruct minitest to use this class for the integration tests
 # 
 #   # https://github.com/plataformatec/devise/wiki/How-To:-Test-with-Capybara
 #   # so we can `login_as(user, :scope => :user)`

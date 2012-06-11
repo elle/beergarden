@@ -29,8 +29,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'launchy'
-  gem 'minitest-matchers'
-  gem 'minitest-reporters'
+  gem 'minitest-matchers' # RSpec/Shoulda-style matchers to minitest/unit and minitest/spec
+  gem 'minitest-reporters' # https://github.com/CapnKernul/minitest-reporters
   gem 'valid_attribute', :git => 'git://github.com/wojtekmach/valid_attribute.git', :branch => 'minitest-matchers-11'
-  gem 'rr'
 end

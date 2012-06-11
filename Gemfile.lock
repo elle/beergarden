@@ -137,7 +137,6 @@ GEM
     rake (0.9.3.beta.1)
     rdoc (3.12)
       json (~> 1.4)
-    rr (1.0.4)
     ruby-progressbar (0.0.10)
     rubyzip (0.9.8)
     sass (3.1.19)
@@ -190,7 +189,6 @@ DEPENDENCIES
   minitest-reporters
   rails (= 3.2.2)
   rake (= 0.9.3.beta.1)
-  rr
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
