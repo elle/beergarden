@@ -8,8 +8,11 @@ require 'debugger'
 
 # # Turn like output reporter. More options, check: http://rubydoc.info/gems/minitest-reporters/0.4.0/file/README.md
 require 'minitest/reporters'
-MiniTest::Unit.runner = MiniTest::SuiteRunner.new
-MiniTest::Unit.runner.reporters << MiniTest::Reporters::SpecReporter.new
+# NEw format from version 0.10.1 Check new maintainer repo: https://github.com/CapnKernul/minitest-reporters
+MiniTest::Reporters.use! MiniTest::Reporters::SpecReporter.new
+# Old synatx:
+# MiniTest::Unit.runner = MiniTest::SuiteRunner.new
+# MiniTest::Unit.runner.reporters << MiniTest::Reporters::SpecReporter.new
 
 # # Require ruby files in support dir.
 Dir[File.expand_path('test/support/*.rb')].each { |file| require file }
